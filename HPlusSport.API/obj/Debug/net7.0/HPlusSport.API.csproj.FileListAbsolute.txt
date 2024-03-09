@@ -34,3 +34,6 @@
 /Users/shekhor/projects/HPlusSport.API/HPlusSport.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
 /Users/shekhor/projects/HPlusSport.API/HPlusSport.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/shekhor/projects/HPlusSport.API/HPlusSport.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/shekhor/projects/HPlusSport.API/HPlusSport.API/bin/Debug/net7.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/shekhor/projects/HPlusSport.API/HPlusSport.API/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/Users/shekhor/projects/HPlusSport.API/HPlusSport.API/bin/Debug/net7.0/Newtonsoft.Json.dll

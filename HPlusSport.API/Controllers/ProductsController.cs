@@ -11,7 +11,7 @@ namespace HPlusSport.API
 {
     [Route("api/[Controller]")]
     [ApiController]
-    public class ProductsController : Controller
+    public class ProductsController : ControllerBase
     {
         private readonly ShopContext shopContext;
 
@@ -22,9 +22,33 @@ namespace HPlusSport.API
         }
 
         [HttpGet]
-        public IEnumerable<Product> GetAllProducts()
+        public IActionResult GetAllProducts()
         {
-            return shopContext.Products.ToArray();
+            return Ok(shopContext.Products.ToArray());
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult GetProduct(int id)
+        {
+            var product = shopContext.Products.Find(id);
+            if(product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Product>> PostProduct(Product product)
+        {
+            shopContext.Products.Add(product);
+            await shopContext.SaveChangesAsync();
+
+            return CreatedAtAction(
+                "GetProduct",
+                new { id = product.Id },
+                product);
         }
     }
 }
